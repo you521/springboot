@@ -57,6 +57,8 @@
 	</dependencies>
 
 	<build>
+	   <!-- 设置打包后的文件名称 -->
+	    <finalName>springboot</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

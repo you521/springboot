@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SampleController
 {
-       @RequestMapping(value="/index")
+       @RequestMapping(value="/index.html")
        public String home() {
            return "Welcome to spring boot!";
        }

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MySpringBootApplication {
       /**
         * @Title: main  
-        * @Description: 程序入口主函数
+        * @Description: springboot项目的启动类
         * @param @param args  参数  
         * @return void    返回类型  
         * @throws

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MySpringBootApplication {
       /**
-        * @Title: main  
+        * @Title:   
         * @Description: springboot项目的启动类
         * @param @param args  参数  
         * @return void    返回类型  

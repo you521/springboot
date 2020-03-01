@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @Component
 @PropertySource(value ={"classpath:config/spark.properties",
-                        "file:${spring.profiles.path}/config/spark.properties"},
+                        "file:${spring.profiles.path}/spark.properties"},
                         ignoreResourceNotFound=true) // 加载文件的路径
 @ConfigurationProperties(prefix = "spark") // 配置 文件的前缀
 public class SparkConfigBean

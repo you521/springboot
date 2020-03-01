@@ -1,0 +1,17 @@
+spring:
+  application: #服务名
+    name: springboot
+  profiles:
+    # 多环境配置
+    active: local
+    # 外部资源配置文件统一放置的目录，包含核心文件自身也是放置在里面的
+    path: F:/springboot_server/config
+  # 设置编码格式
+  http:
+    encoding:
+      # 编码格式
+      charset: UTF-8
+      # 设置forceEncoding
+      force: true
+      # 是否开启
+      enabled: true

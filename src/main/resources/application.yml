@@ -1,5 +1,6 @@
 spring:
-  application: #服务名
+  application: 
+    # 服务名
     name: springboot
   profiles:
     # 多环境配置

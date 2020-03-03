@@ -7,6 +7,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -27,6 +28,8 @@ public class AESUtil
     private static Logger logger = LoggerFactory.getLogger(AESUtil.class);
     // 算法名称
     private static final String ALGORITHM = "AES";
+    
+    private Base64 base64 = new Base64();
     
     /**
      * 
@@ -66,6 +69,41 @@ public class AESUtil
     
     /**
      * 
+        * @Title: encryptToBase64  
+        * @Description: AES字符串加密为Base64编码
+        * @param @param content
+        * @param @param password
+        * @param @return
+        * @param @throws Exception    参数  
+        * @return String    返回类型  
+        * @throws
+     */
+    public String encryptToBase64(String content, String password) throws Exception {
+        String str = null;
+        try
+        {
+            // 创建算法是AES的密码器
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            // 生成加密秘钥
+            SecretKey secretKey = this.geneKey(password);
+            // 初始化为加密模式的密码器
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+            // 获取字符串 字 节 数 组
+            byte[] byteContent = content.getBytes("utf-8");
+            // 加 密 后 的 字 节 数 组
+            byte[] result = cipher.doFinal(byteContent);
+            // 对 加 密 后 的 字 节 数 组 进 行 Base64 编 码
+            str = base64.encodeToString(result);
+        } catch (Exception e)
+        {
+           logger.error("字符串加密失败："+e);
+           throw e;
+        }
+        return str;
+    }
+    
+    /**
+     * 
         * @Title: decrypt  
         * @Description: AES解密  
         * @param @param content
@@ -90,6 +128,39 @@ public class AESUtil
             cipher.init(Cipher.DECRYPT_MODE, secretKey);
             // 将二进制数转成明文
             str = new String(cipher.doFinal(result),"utf-8");
+        } catch (Exception e)
+        {
+           logger.error("字符串解密失败："+e);
+           throw e;
+        }
+        return str.toString();
+    }
+    
+    /**
+     * 
+        * @Title: decryptToBase64  
+        * @Description: Base64编码密文AES解密
+        * @param @param content
+        * @param @param password
+        * @param @return
+        * @param @throws Exception    参数  
+        * @return String    返回类型  
+        * @throws
+     */
+    public String decryptToBase64(String content, String password) throws Exception {
+        String str = null;
+        try
+        {
+            // 创建算法是AES的密码器
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            // 生成加密秘钥
+            SecretKey secretKey = this.geneKey(password);
+            // 初始化为加密模式的密码器
+            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            // 将Base64解码
+            byte[] base64Str = base64.decode(content.getBytes());
+            // 将二进制数转成明文
+            str =  new String(cipher.doFinal(base64Str),"utf-8");
         } catch (Exception e)
         {
            logger.error("字符串解密失败："+e);

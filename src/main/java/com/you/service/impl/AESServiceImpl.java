@@ -23,7 +23,7 @@ public class AESServiceImpl implements AESService
         String result = null;
         try
         {
-            result = aESUtil.encrypt(str, KEY);
+            result = aESUtil.encryptToBase64(str, KEY);
         } catch (Exception e)
         {
             e.printStackTrace();
@@ -37,7 +37,7 @@ public class AESServiceImpl implements AESService
         String result = null;
         try
         {
-            result = aESUtil.decrypt(str, KEY);
+            result = aESUtil.decryptToBase64(str, KEY);
         } catch (Exception e)
         {
             e.printStackTrace();

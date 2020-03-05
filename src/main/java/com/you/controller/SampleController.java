@@ -20,7 +20,7 @@ public class SampleController
     @Autowired
     private SparkConfigBean sparkConfigBean;
     
-    @RequestMapping(value="/index.html")
+    @RequestMapping(value="/index.html",produces = "application/json;charset=UTF-8")
     public String home() {
         System.out.println("-------------sparkConfigBean------------"+sparkConfigBean.getMaster());
         System.out.println("-------------sparkConfigBean------------"+sparkConfigBean.getSparkName());

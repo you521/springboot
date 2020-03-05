@@ -16,7 +16,8 @@ import org.springframework.stereotype.Component;
 /**
  * 
     * @ClassName: AESUtil  
-    * @Description: AES加解密工具类  
+    * @Description: AES加解密工具类  （对称加密）
+    *               一方将传输的报文用私钥加密，得到密文。另一方接收到密文，用密钥解密，得到明文
     * @author you  
     * @date 2020年3月3日  
     *

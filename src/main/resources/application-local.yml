@@ -41,3 +41,12 @@ logging:
   # 日志的输出级别
   level:
     root: info
+# 拦截器路径拦截或者不拦截配置
+interceptorconfig:
+  path:
+    #该路径下任何类型请求均拦截
+    include:
+      - /api/v1/token/api_token
+    #该路径下任何请求均放行
+    exclude:
+      - /api/v1/yibaotong/save

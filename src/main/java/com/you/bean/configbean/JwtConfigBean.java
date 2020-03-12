@@ -1,18 +1,18 @@
-package com.you.config;
+package com.you.bean.configbean;
 
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import com.you.bean.User;
 
 import lombok.Data;
 
 @Data
-@Configuration
+@Component
 @ConfigurationProperties(prefix = "jwt") // 配置 文件的前缀
-public class JwtConfig
+public class JwtConfigBean
 {
     /**
      * 用户凭证

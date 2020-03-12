@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import com.you.config.SparkConfigBean;
+import com.you.bean.configbean.SparkConfigBean;
 
 
 
@@ -44,7 +44,7 @@ public class SignAuthFilter implements  Filter
         logger.info("------------初始化 SignAuthFilter------------");
         // 往filter过滤器中注入spring容器bean
         ServletContext servletContext  = filterConfig.getServletContext();
-        ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(servletContext );
+        ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(servletContext);
         sparkConfigBean = ac.getBean(SparkConfigBean.class);
     }
 

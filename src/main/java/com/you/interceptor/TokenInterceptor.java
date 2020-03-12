@@ -3,7 +3,6 @@ package com.you.interceptor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
     *
  */
 
-@Component
 public class TokenInterceptor implements HandlerInterceptor
 {
     
@@ -26,10 +24,10 @@ public class TokenInterceptor implements HandlerInterceptor
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
       
-//        System.out.println("getContextPath:" + request.getContextPath());
-//        System.out.println("getServletPath:" + request.getServletPath());
-//        System.out.println("getRequestURI:" + request.getRequestURI());
-//        System.out.println("getRequestURL:" + request.getRequestURL());
+        System.out.println("getContextPath:" + request.getContextPath());
+        System.out.println("getServletPath:" + request.getServletPath());
+        System.out.println("getRequestURI:" + request.getRequestURI());
+        System.out.println("getRequestURL:" + request.getRequestURL());
         // 返回true,postHandler和afterCompletion方法才能执行
         // 否则false为拒绝执行，起到拦截器控制作用
         return true;

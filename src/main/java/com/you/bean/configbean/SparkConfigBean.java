@@ -1,4 +1,4 @@
-package com.you.config;
+package com.you.bean.configbean;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;

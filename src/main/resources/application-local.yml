@@ -16,6 +16,22 @@ server:
     accept-count: 1000
     # 服务器连接建立超时时间
     connection-timeout: 10000
+# 配置jwt
+jwt:
+  # token需要放的头部属性名称
+  header: Authorization
+  # 生成token的秘钥
+  secret: aHR0cHM6Ly9teS5vc2NoaW5hLm5ldC91LzM2ODE4Njg=
+  # token过期时间
+  expire: 7200
+  # token前缀
+  tokenPrefix: Bearer
+  # 平台分的调用平台的用户名和密码（实体集合）
+  userlist:
+    - appId: YiBaoTong
+      passwor: 123456
+    - appId: ZhiKe
+      password: 123456
 # 配置日志输出级别
 logging:
   # 指定logback配置文件的位置 

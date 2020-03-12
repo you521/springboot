@@ -103,23 +103,6 @@ public class RSAUtil
     }
  
     /**
-     * 
-        * @Title: getPrivateKeyStr  
-        * @Description: 获得私钥字符串 
-        * @param @param keyPair
-        * @param @return
-        * @param @throws Exception    参数  
-        * @return String    返回类型  
-        * @throws
-     */
-    public String getPrivateKeyStr(KeyPair keyPair) throws Exception {
-        // 获得keyPair中的私钥对象 转为key对象
-        Key key = (Key) keyPair.getPrivate();
-        // 字节编码返回字符串
-        return new String(Base64.encodeBase64(key.getEncoded()));
-    }
-    
-    /**
      * 验签
      * 
      * @param srcData 原始字符串
@@ -140,6 +123,23 @@ public class RSAUtil
         return signature.verify(Base64.decodeBase64(sign.getBytes()));
     }
 
+    /**
+     * 
+        * @Title: getPrivateKeyStr  
+        * @Description: 获得私钥字符串 
+        * @param @param keyPair
+        * @param @return
+        * @param @throws Exception    参数  
+        * @return String    返回类型  
+        * @throws
+     */
+    public String getPrivateKeyStr(KeyPair keyPair) throws Exception {
+        // 获得keyPair中的私钥对象 转为key对象
+        Key key = (Key) keyPair.getPrivate();
+        // 字节编码返回字符串
+        return new String(Base64.encodeBase64(key.getEncoded()));
+    }
+    
     /**
      * 获取私钥
      * 

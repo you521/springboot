@@ -1,5 +1,6 @@
 package com.you.bean.configbean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -12,8 +13,9 @@ import lombok.Data;
 @Data
 @Component
 @ConfigurationProperties(prefix = "jwt") // 配置 文件的前缀
-public class JwtConfigBean
+public class JwtConfigBean implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     /**
      * 用户凭证
      */
@@ -30,6 +32,10 @@ public class JwtConfigBean
      * token前缀
      */
     private String tokenPrefix;
+    /*
+     * 签发者
+     */
+    private String issuer;
     /**
      * 用户列表
      */

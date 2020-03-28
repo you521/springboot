@@ -1,4 +1,4 @@
-package com.you.model;
+package com.you.common.model;
 
 /**
  * 
@@ -22,6 +22,8 @@ public enum HttpStatus
     SIGN_ERROR(1004, "签名异常"),
 
     DATABASE_ERROR(1005, "数据库异常"),
+    
+    TOKEN_REFRESH(1006, "token重新刷新生成"),
     
     INTERNAL_SERVER_ERROR(500, "服务器内部错误");
     

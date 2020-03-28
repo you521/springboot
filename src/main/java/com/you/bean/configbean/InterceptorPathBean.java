@@ -12,6 +12,7 @@ import lombok.Data;
 @ConfigurationProperties(prefix = "interceptorconfig.path") // 配置 文件的前缀
 public class InterceptorPathBean
 {
+    
     /*
      * 需要拦截的路径
      */

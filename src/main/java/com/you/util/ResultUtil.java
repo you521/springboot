@@ -1,9 +1,9 @@
 package com.you.util;
 
 
-import com.you.model.HttpStatus;
-import com.you.model.ResponseDataModel;
-import com.you.model.ResponseModel;
+import com.you.common.model.HttpStatus;
+import com.you.common.model.ResponseDataModel;
+import com.you.common.model.ResponseModel;
 
 
 /**

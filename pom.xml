@@ -29,10 +29,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
-		</dependency>
 	    <!-- Web starter依赖引入，会增加web容器、springweb、springmvc、jackson-databind等相关的依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -94,6 +90,24 @@
 		    <artifactId>jjwt</artifactId>
 		    <version>0.7.0</version>
 		</dependency>
+		
+		<!-- redis 依赖start -->
+		<!-- 引入spring-redis的依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- 使用Lettuce 需要额外引用 commons-pool2 包 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+		<dependency>        
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.8</version>
+        </dependency>
+        <!-- redis 依赖end -->
 	</dependencies>
 
 	<build>

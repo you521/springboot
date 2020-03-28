@@ -1,10 +1,15 @@
 package com.you.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.fastjson.JSONObject;
+import com.you.common.annotation.PassToken;
 import com.you.bean.configbean.SparkConfigBean;
+import com.you.common.model.ResponseModel;
+import com.you.util.ResultUtil;
 
 /**
  * 
@@ -21,10 +26,12 @@ public class SampleController
     @Autowired
     private SparkConfigBean sparkConfigBean;
     
+    @PassToken()
     @RequestMapping(value="/save",produces = "application/json;charset=UTF-8")
-    public String home() {
+    public ResponseModel home(@RequestBody JSONObject jsonObject) {
         System.out.println("-------------sparkConfigBean------------"+sparkConfigBean.getMaster());
         System.out.println("-------------sparkConfigBean------------"+sparkConfigBean.getSparkName());
-       return "Welcome to spring boot!";
+        String name = jsonObject.getString("name");
+        return ResultUtil.success(name);
     }
 }

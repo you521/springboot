@@ -24,7 +24,7 @@ public class StartSpringBootApplication {
         * @throws
      */
 	public static void main(String[] args) {
-	    log.info("---------------main函数启动开始-----------------");
+	    //log.info("---------------main函数启动开始-----------------");
 	    SpringApplication.run(StartSpringBootApplication.class, args);
 	    log.info("---------------main函数启动结束-----------------");
 	}

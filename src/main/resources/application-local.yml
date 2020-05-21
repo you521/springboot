@@ -74,7 +74,7 @@ logging:
   # 指定logback配置文件的位置 
   config: classpath:logback-spring.xml
   # 文件日志要输出的路径
-  path: E:/logs/springboot_server
+  path: C:/logs/springboot_server
   # 日志的输出级别
   level:
     root: info

@@ -80,7 +80,7 @@
         <!-- 
                               说明：  日志名称，如果没有File 属性，那么只会使用FileNamePattern的文件路径规则
                                            如果同时有<File>和<FileNamePattern>，那么当天日志是<File>的日志，明天会自动把今天
-                                           的日志改名为今天的日期;即 <File> 的日志都是当天的 
+                                           的日志改名为今天的日期;也就是说<File> 的日志都是当天的 
         -->
         <file>${LOG_PATH}/log_debug.log</file>
         <!-- 
@@ -204,10 +204,10 @@
     <!-- 
                         子节点四: <logger>
         logger:用来设置某一个包或者具体的某一个类的日志打印级别、 以及指定<appender>
-        name：表示匹配的logger类型前缀，也就是包的前半部分
+        name：用来指定受此logger约束的某一个包或者具体的某一个类
         level：要记录的日志级别，包括 TRACE < DEBUG < INFO < WARN < ERROR
         additivity：作用在于children-logger是否使用 rootLogger配置的appender进行输出,默认为true
-        false：表示只用当前logger的appender-ref
+        false：表示只用在当前logger的appender-ref
         true：表示当前logger的appender-ref和rootLogger的appender-ref都有效
     -->
         
@@ -229,9 +229,8 @@
                      这里的root设置了 level为info,因此只会打印info以上级别的日志信息;
                     即使root中配置了 <appender-ref ref="DEBUG_FILE" />,但是debug文件中是没有数据的
     -->
-    
     <!-- 日志的输出级别 -->      
-    <!-- <root level="${LOG_LEVEL}">
+    <!--<root level="${LOG_LEVEL}">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="INFO_FILE"/>
         <appender-ref ref="WARN_FILE"/>
